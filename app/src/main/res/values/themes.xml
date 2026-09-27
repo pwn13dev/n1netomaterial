@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Launcher theme: plain framework dark theme (no AppCompat/Material libs,
+         keeps the APK tiny and boots fast on old ATV boxes). Material You
+         colors are applied at runtime by N1Theme in code. -->
+    <style name="Theme.N1netoMaterial.Base" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:colorPrimary">@color/accent_primary</item>
+        <item name="android:colorAccent">@color/accent_primary</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="Theme.N1netoMaterial" parent="Theme.N1netoMaterial.Base" />
+
+    <style name="Theme.N1netoMaterial.Settings" parent="Theme.N1netoMaterial.Base" />
+
+    <style name="Text.N1" parent="@android:style/TextAppearance.Material.Body1" />
+
+    <!-- Typography styles (Material type scale, trimmed for the 10-foot UI) -->
+    <style name="Text.N1.RowTitle">
+        <item name="android:textSize">@dimen/row_title_size</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/on_surface_dark</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.N1.AppLabel">
+        <item name="android:textSize">@dimen/tile_label_size</item>
+        <item name="android:textColor">@color/on_surface_dim_dark</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="Text.N1.Clock">
+        <item name="android:textSize">52sp</item>
+        <item name="android:textColor">@color/on_surface_dark</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+</resources>

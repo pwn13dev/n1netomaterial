@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tuned for the 10-foot experience -->
+    <dimen name="row_title_size">16sp</dimen>
+    <dimen name="tile_label_size">13sp</dimen>
+    <dimen name="tile_width">132dp</dimen>
+    <dimen name="tile_height">118dp</dimen>
+    <dimen name="tile_icon">52dp</dimen>
+    <dimen name="tile_radius">20dp</dimen>
+    <dimen name="tile_spacing">12dp</dimen>
+    <dimen name="row_spacing">20dp</dimen>
+    <dimen name="page_margin">36dp</dimen>
+    <dimen name="header_height">96dp</dimen>
+    <item name="focus_scale" format="float" type="dimen">1.08</item>
+</resources>

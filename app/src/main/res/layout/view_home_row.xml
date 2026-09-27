@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One home row: title + horizontally scrolling ListView of tiles (API 17 safe) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/row_spacing">
+
+    <TextView
+        android:id="@+id/row_title"
+        style="@style/Text.N1.RowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="4dp" />
+
+    <ListView
+        android:id="@+id/row_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tile_height"
+        android:background="@null"
+        android:cacheColorHint="@android:color/transparent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:descendantFocusability="afterDescendants"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        android:overScrollMode="never"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:scrollbars="none" />
+</LinearLayout>

@@ -1,0 +1,137 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.n1neto.material"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="17"
+9        android:targetSdkVersion="28" />
+10
+11    <!--
+12         Android 11+: needed to enumerate all installed apps on the box.
+13         Ignored on older devices; queries{} below keeps newer Play builds happy.
+14    -->
+15    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+15-->/workspace/app/src/main/AndroidManifest.xml:7:5-9:53
+15-->/workspace/app/src/main/AndroidManifest.xml:8:9-61
+16
+17    <queries>
+17-->/workspace/app/src/main/AndroidManifest.xml:11:5-20:15
+18        <intent>
+18-->/workspace/app/src/main/AndroidManifest.xml:12:9-15:18
+19            <action android:name="android.intent.action.MAIN" />
+19-->/workspace/app/src/main/AndroidManifest.xml:13:13-65
+19-->/workspace/app/src/main/AndroidManifest.xml:13:21-62
+20
+21            <category android:name="android.intent.category.LAUNCHER" />
+21-->/workspace/app/src/main/AndroidManifest.xml:14:13-73
+21-->/workspace/app/src/main/AndroidManifest.xml:14:23-70
+22        </intent>
+23        <intent>
+23-->/workspace/app/src/main/AndroidManifest.xml:16:9-19:18
+24            <action android:name="android.intent.action.MAIN" />
+24-->/workspace/app/src/main/AndroidManifest.xml:13:13-65
+24-->/workspace/app/src/main/AndroidManifest.xml:13:21-62
+25
+26            <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+26-->/workspace/app/src/main/AndroidManifest.xml:18:13-82
+26-->/workspace/app/src/main/AndroidManifest.xml:18:23-79
+27        </intent>
+28    </queries>
+29
+30    <!-- TV-friendly: touch screen optional, leanback preferred -->
+31    <uses-feature
+31-->/workspace/app/src/main/AndroidManifest.xml:23:5-87
+32        android:name="android.software.leanback"
+32-->/workspace/app/src/main/AndroidManifest.xml:23:19-59
+33        android:required="false" />
+33-->/workspace/app/src/main/AndroidManifest.xml:23:60-84
+34    <uses-feature
+34-->/workspace/app/src/main/AndroidManifest.xml:24:5-90
+35        android:name="android.hardware.touchscreen"
+35-->/workspace/app/src/main/AndroidManifest.xml:24:19-62
+36        android:required="false" />
+36-->/workspace/app/src/main/AndroidManifest.xml:24:63-87
+37    <uses-feature
+37-->/workspace/app/src/main/AndroidManifest.xml:25:5-86
+38        android:name="android.hardware.gamepad"
+38-->/workspace/app/src/main/AndroidManifest.xml:25:19-58
+39        android:required="false" />
+39-->/workspace/app/src/main/AndroidManifest.xml:25:59-83
+40
+41    <application
+41-->/workspace/app/src/main/AndroidManifest.xml:27:5-63:19
+42        android:name="com.n1neto.material.N1App"
+42-->/workspace/app/src/main/AndroidManifest.xml:28:9-30
+43        android:allowBackup="true"
+43-->/workspace/app/src/main/AndroidManifest.xml:29:9-35
+44        android:banner="@mipmap/ic_launcher"
+44-->/workspace/app/src/main/AndroidManifest.xml:31:9-45
+45        android:debuggable="true"
+46        android:extractNativeLibs="true"
+47        android:hardwareAccelerated="true"
+47-->/workspace/app/src/main/AndroidManifest.xml:34:9-43
+48        android:icon="@mipmap/ic_launcher"
+48-->/workspace/app/src/main/AndroidManifest.xml:30:9-43
+49        android:label="@string/app_name"
+49-->/workspace/app/src/main/AndroidManifest.xml:32:9-41
+50        android:supportsRtl="true"
+50-->/workspace/app/src/main/AndroidManifest.xml:33:9-35
+51        android:theme="@style/Theme.N1netoMaterial" >
+51-->/workspace/app/src/main/AndroidManifest.xml:35:9-52
+52
+53        <!-- Home launcher entry (works on older ATV: uses LEANBACK_LAUNCHER + LAUNCHER) -->
+54        <activity
+54-->/workspace/app/src/main/AndroidManifest.xml:38:9-53:20
+55            android:name="com.n1neto.material.HomeActivity"
+55-->/workspace/app/src/main/AndroidManifest.xml:39:13-41
+56            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize"
+56-->/workspace/app/src/main/AndroidManifest.xml:43:13-94
+57            android:exported="true"
+57-->/workspace/app/src/main/AndroidManifest.xml:40:13-36
+58            android:focusable="true"
+58-->/workspace/app/src/main/AndroidManifest.xml:41:13-37
+59            android:launchMode="singleTask"
+59-->/workspace/app/src/main/AndroidManifest.xml:44:13-44
+60            android:screenOrientation="sensorLandscape"
+60-->/workspace/app/src/main/AndroidManifest.xml:42:13-56
+61            android:stateNotNeeded="true" >
+61-->/workspace/app/src/main/AndroidManifest.xml:45:13-42
+62            <intent-filter>
+62-->/workspace/app/src/main/AndroidManifest.xml:46:13-52:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->/workspace/app/src/main/AndroidManifest.xml:13:13-65
+63-->/workspace/app/src/main/AndroidManifest.xml:13:21-62
+64
+65                <category android:name="android.intent.category.HOME" />
+65-->/workspace/app/src/main/AndroidManifest.xml:48:17-73
+65-->/workspace/app/src/main/AndroidManifest.xml:48:27-70
+66                <category android:name="android.intent.category.DEFAULT" />
+66-->/workspace/app/src/main/AndroidManifest.xml:49:17-76
+66-->/workspace/app/src/main/AndroidManifest.xml:49:27-73
+67                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+67-->/workspace/app/src/main/AndroidManifest.xml:18:13-82
+67-->/workspace/app/src/main/AndroidManifest.xml:18:23-79
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->/workspace/app/src/main/AndroidManifest.xml:14:13-73
+68-->/workspace/app/src/main/AndroidManifest.xml:14:23-70
+69            </intent-filter>
+70        </activity>
+71
+72        <!-- Material You themed settings -->
+73        <activity
+73-->/workspace/app/src/main/AndroidManifest.xml:56:9-61:68
+74            android:name="com.n1neto.material.SettingsActivity"
+74-->/workspace/app/src/main/AndroidManifest.xml:57:13-45
+75            android:exported="false"
+75-->/workspace/app/src/main/AndroidManifest.xml:58:13-37
+76            android:label="@string/settings_title"
+76-->/workspace/app/src/main/AndroidManifest.xml:60:13-51
+77            android:screenOrientation="sensorLandscape"
+77-->/workspace/app/src/main/AndroidManifest.xml:59:13-56
+78            android:theme="@style/Theme.N1netoMaterial.Settings" />
+78-->/workspace/app/src/main/AndroidManifest.xml:61:13-65
+79    </application>
+80
+81</manifest>

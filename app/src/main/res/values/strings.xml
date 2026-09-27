@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">n1netomaterial</string>
+    <string name="settings_title">Settings</string>
+
+    <string name="row_all_apps">All Apps</string>
+    <string name="row_recent">Recently Used</string>
+    <string name="row_suggestions">Suggestions</string>
+
+    <string name="clock_default">--:--</string>
+    <string name="open">Open</string>
+    <string name="launch">Launch</string>
+
+    <!-- Options menu / D-pad long-press actions -->
+    <string name="action_settings">Launcher Settings</string>
+    <string name="action_home_settings">Home App Settings</string>
+    <string name="action_device_info">Device Info</string>
+
+    <!-- Settings UI -->
+    <string name="set_theme_title">Theme</string>
+    <string name="set_accent_title">Accent Color</string>
+    <string name="set_dark_mode">Dark Mode</string>
+    <string name="set_wallpaper">Wallpaper</string>
+    <string name="set_row_recent">Show \"Recently Used\" row</string>
+    <string name="set_animations">Enable animations</string>
+    <string name="theme_dynamic">Material You (dynamic, Android 12+)</string>
+    <string name="theme_classic">Classic</string>
+    <string name="wall_none">None (solid surface)</string>
+    <string name="wall_aurora">Aurora</string>
+    <string name="wall_mesh">Mesh Gradient</string>
+    <string name="wall_minimal">Minimal Lines</string>
+    <string name="info_device">Device</string>
+    <string name="info_android_version">Android version</string>
+    <string name="info_memory">Memory</string>
+    <string name="hint_nav">D-pad to browse · Click to open · Hold MENU or press DOWN for settings</string>
+    <string name="sort_alpha">Sort alphabetically</string>
+    <string name="sort_most_used">Sort by most used</string>
+    <string name="no_apps">No apps found on this device.</string>
+    <string name="action_unavailable">Not available on this device</string>
+    <string name="action_open_info">App info</string>
+    <string name="action_uninstall">Uninstall</string>
+    <string name="info_launcher_version">Launcher version</string>
+    <string name="launcher_version">1.0.0</string>
+</resources>

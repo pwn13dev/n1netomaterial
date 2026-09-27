@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder shown when an app icon cannot be loaded (three dots = apps) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#9E9EA7"
+        android:pathData="M6,8a2,2 0 1,0 0.001,0zM12,8a2,2 0 1,0 0.001,0zM18,8a2,2 0 1,0 0.001,0zM6,16a2,2 0 1,0 0.001,0zM12,16a2,2 0 1,0 0.001,0zM18,16a2,2 0 1,0 0.001,0z" />
+</vector>

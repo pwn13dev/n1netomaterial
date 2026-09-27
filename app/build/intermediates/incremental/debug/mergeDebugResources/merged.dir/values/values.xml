@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent_container">#3B2E66</color>
+    <color name="accent_on_primary">#19025B</color>
+    <color name="accent_primary">#9A82FF</color>
+    <color name="background_dark">#0D0E11</color>
+    <color name="background_light">#FFF8F5FD</color>
+    <color name="on_surface_dark">#E6E1E5</color>
+    <color name="on_surface_dim_dark">#9E9EA7</color>
+    <color name="on_surface_light">#1C1B1F</color>
+    <color name="on_surface_variant_light">#49454F</color>
+    <color name="outline_dark">#49474E</color>
+    <color name="ripple_dark">#33FFFFFF</color>
+    <color name="scrim">#99000000</color>
+    <color name="seed_amber">#FFB300</color>
+    <color name="seed_blue">#3D7AFF</color>
+    <color name="seed_coral">#FF6E5A</color>
+    <color name="seed_green">#4CAF50</color>
+    <color name="seed_pink">#E860A8</color>
+    <color name="seed_purple">#7F62FF</color>
+    <color name="seed_teal">#00BFA5</color>
+    <color name="seed_violet">#7F62FF</color>
+    <color name="surface_container_dark">#1E1F24</color>
+    <color name="surface_dark">#121316</color>
+    <color name="surface_high_dark">#272830</color>
+    <color name="surface_light">#FFFBFE</color>
+    <item format="float" name="focus_scale" type="dimen">1.08</item>
+    <dimen name="header_height">96dp</dimen>
+    <dimen name="page_margin">36dp</dimen>
+    <dimen name="row_spacing">20dp</dimen>
+    <dimen name="row_title_size">16sp</dimen>
+    <dimen name="tile_height">118dp</dimen>
+    <dimen name="tile_icon">52dp</dimen>
+    <dimen name="tile_label_size">13sp</dimen>
+    <dimen name="tile_radius">20dp</dimen>
+    <dimen name="tile_spacing">12dp</dimen>
+    <dimen name="tile_width">132dp</dimen>
+    <string name="action_device_info">Device Info</string>
+    <string name="action_home_settings">Home App Settings</string>
+    <string name="action_open_info">App info</string>
+    <string name="action_settings">Launcher Settings</string>
+    <string name="action_unavailable">Not available on this device</string>
+    <string name="action_uninstall">Uninstall</string>
+    <string name="app_name">n1netomaterial</string>
+    <string name="clock_default">--:--</string>
+    <string name="hint_nav">D-pad to browse · Click to open · Hold MENU or press DOWN for settings</string>
+    <string name="info_android_version">Android version</string>
+    <string name="info_device">Device</string>
+    <string name="info_launcher_version">Launcher version</string>
+    <string name="info_memory">Memory</string>
+    <string name="launch">Launch</string>
+    <string name="launcher_version">1.0.0</string>
+    <string name="no_apps">No apps found on this device.</string>
+    <string name="open">Open</string>
+    <string name="row_all_apps">All Apps</string>
+    <string name="row_recent">Recently Used</string>
+    <string name="row_suggestions">Suggestions</string>
+    <string name="set_accent_title">Accent Color</string>
+    <string name="set_animations">Enable animations</string>
+    <string name="set_dark_mode">Dark Mode</string>
+    <string name="set_row_recent">Show \"Recently Used\" row</string>
+    <string name="set_theme_title">Theme</string>
+    <string name="set_wallpaper">Wallpaper</string>
+    <string name="settings_title">Settings</string>
+    <string name="sort_alpha">Sort alphabetically</string>
+    <string name="sort_most_used">Sort by most used</string>
+    <string name="theme_classic">Classic</string>
+    <string name="theme_dynamic">Material You (dynamic, Android 12+)</string>
+    <string name="wall_aurora">Aurora</string>
+    <string name="wall_mesh">Mesh Gradient</string>
+    <string name="wall_minimal">Minimal Lines</string>
+    <string name="wall_none">None (solid surface)</string>
+    <style name="Text.N1" parent="@android:style/TextAppearance.Material.Body1"/>
+    <style name="Text.N1.AppLabel">
+        <item name="android:textSize">@dimen/tile_label_size</item>
+        <item name="android:textColor">@color/on_surface_dim_dark</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="Text.N1.Clock">
+        <item name="android:textSize">52sp</item>
+        <item name="android:textColor">@color/on_surface_dark</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="Text.N1.RowTitle">
+        <item name="android:textSize">@dimen/row_title_size</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">@color/on_surface_dark</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="Theme.N1netoMaterial" parent="Theme.N1netoMaterial.Base"/>
+    <style name="Theme.N1netoMaterial.Base" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:colorPrimary">@color/accent_primary</item>
+        <item name="android:colorAccent">@color/accent_primary</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    <style name="Theme.N1netoMaterial.Settings" parent="Theme.N1netoMaterial.Base"/>
+</resources>
