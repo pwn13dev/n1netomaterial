@@ -1,1 +1,3 @@
-tools/sdk/
+# Build artifacts
+build/
+.gradle/
