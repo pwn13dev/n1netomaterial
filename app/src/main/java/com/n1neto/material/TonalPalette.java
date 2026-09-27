@@ -56,46 +56,52 @@ public final class TonalPalette {
         float a = mat(LMS_TO_MA, 0, lD, mD, sD);
         float bb = mat(LMS_TO_MA, 1, lD, mD, sD);
         float cC = mat(LMS_TO_MA, 2, lD, mD, sD);
-        float hue = (float) Math.toDegrees(Math.atan2(bb, a));
+        float hue = (float) Math.toDegrees(Math.atan2((double) bb, (double) a));
         if (hue < 0) hue += 360;
-        float chroma = (float) Math.sqrt(a * a + bb * bb);
-        float lightness = yToLuma(Y / WHITE_Y);
+        float chroma = (float) Math.sqrt((double) a * a + (double) bb * bb);
+        float lightness = yToLuma((float) (Y / WHITE_Y));
         return new TonalPalette(hue, chroma, lightness);
     }
 
     /** Build an ARGB color from a hue/chroma/lightness triple (tonal spot). */
     public static int argbFromHct(float hue, float chroma, float luma) {
-        float rad = (float) Math.toRadians(hue);
-        float a = chroma * (float) Math.cos(rad);
-        float b = chroma * (float) Math.sin(rad);
-        float y = lumaToY(luma / 100f);
-        // Solve LMS from (a,b,y) using CAM16 inverse relationships.
-        float lmsY = y * 100f;
-        // Derive l,m,s such that Ma=a, Mb=b, Y=luma — via least-squares closed form.
-        float la = MA_TO_LMS[0], lb = MA_TO_LMS[1], lc = MA_TO_LMS[2];
-        float ma = MA_TO_LMS[3], mb = MA_TO_LMS[4], mc = MA_TO_LMS[5];
-        float sa = MA_TO_LMS[6], sb = MA_TO_LMS[7], sc = MA_TO_LMS[8];
-        // tone(l)=L etc. Start with tones as unknowns t1,t2,t3:
-        // a = 0.4 t1 + 0.4 t2 - 0.4 t3 ; b = t1 -2 t2 + t3 ; y' = (t1+t2+t3)/3 approx
-        // Use direct numeric solve (few iterations is plenty for UI colors).
-        float t1 = lmsY, t2 = lmsY, t3 = lmsY;
-        for (int i = 0; i < 24; i++) {
-            float ca = la * t1 + lb * t2 + lc * t3;
-            float cb = ma * t1 + mb * t2 + mc * t3;
-            float cy = (sa * t1 + sb * t2 + sc * t3) / 3f;
-            float ea = ca - a, eb = cb - b, ey = cy - lmsY;
-            t1 -= (ea * la + eb * ma + ey * sa / 3f) * 0.11f;
-            t2 -= (ea * lb + eb * mb + ey * sb / 3f) * 0.11f;
-            t3 -= (ea * lc + eb * mc + ey * sc / 3f) * 0.11f;
+        // Inverse-HCT approximation: start from the CIE-Lab L (from our perceptual
+        // lightness), derive Y, then solve for a*/b* on the hue/chroma circle and
+        // convert Lab -> XYZ -> sRGB. This keeps the Material-like tonal behaviour
+        // without shipping the full material-color-utilities library.
+        double lStar = luma;
+        double y;
+        if (lStar <= 8.0) {
+            y = lStar / 903.3;
+        } else {
+            double t = (lStar + 16.0) / 116.0;
+            y = t * t * t;
         }
-        float l = invCam16Tone(t1), m = invCam16Tone(t2), s = invCam16Tone(t3);
-        float X = mat(LMS_TO_XYZ, 0, l, m, s) * WHITE_X;
-        float Y = mat(LMS_TO_XYZ, 1, l, m, s) * WHITE_Y;
-        float Z = mat(LMS_TO_XYZ, 2, l, m, s) * WHITE_Z;
-        float rl = 3.2406f * X - 1.5372f * Y - 0.4986f * Z;
-        float gl = -0.9689f * X + 1.8758f * Y + 0.0415f * Z;
-        float bl = 0.0557f * X - 0.2040f * Y + 1.0570f * Z;
-        int R = to255(delinear(rl)), G = to255(delinear(gl)), B = to255(delinear(bl));
+        double rad = Math.toRadians(hue);
+        double cStar = Math.min((double) chroma, 128.0);
+        double aStar = cStar * Math.cos(rad);
+        double bStar = cStar * Math.sin(rad);
+
+        double fy = (y > 0.008856451679) ? Math.cbrt(y)
+                : (903.2962962 * y + 16.0) / 116.0;
+        double fx = (aStar / 500.0) + fy;
+        double fz = fy - (bStar / 200.0);
+
+        double xr = (fx > 0.206896552) ? fx * fx * fx : (fx - 0.137931034) / 7.787037037;
+        double yr = (fy > 0.206896552) ? fy * fy * fy : (fy - 0.137931034) / 7.787037037;
+        double zr = (fz > 0.206896552) ? fz * fz * fz : (fz - 0.137931034) / 7.787037037;
+
+        double X = xr * WHITE_X;
+        double Yv = yr * WHITE_Y;
+        double Z = zr * WHITE_Z;
+
+        double rl = 3.2406 * X - 1.5372 * Yv - 0.4986 * Z;
+        double gl = -0.9689 * X + 1.8758 * Yv + 0.0415 * Z;
+        double bl = 0.0557 * X - 0.2040 * Yv + 1.0570 * Z;
+
+        int R = to255(delinear((float) rl));
+        int G = to255(delinear((float) gl));
+        int B = to255(delinear((float) bl));
         return Color.rgb(R, G, B);
     }
 

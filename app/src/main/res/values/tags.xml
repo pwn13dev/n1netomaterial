@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Stable key used to stash the AppInfo on each tile view (setTag(int, Object)). -->
+    <item name="tag_action" type="id" />
+</resources>

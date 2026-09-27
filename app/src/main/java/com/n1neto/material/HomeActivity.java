@@ -202,7 +202,7 @@ public class HomeActivity extends Activity implements RowAdapter.RowFocusListene
         for (int i = 0; i < rows.size(); i++) {
             if (rows.get(i).focusedChild() != null) { currentRow = i; break; }
         }
-        int x = focused != null ? centerOf(focused) : getWidth() / 2;
+        int x = focused != null ? centerOf(focused) : listWidth() / 2;
         int target = currentRow + direction;
         if (target < 0) {
             settingsButton.requestFocus();
@@ -216,6 +216,11 @@ public class HomeActivity extends Activity implements RowAdapter.RowFocusListene
         int[] loc = new int[2];
         v.getLocationInWindow(loc);
         return loc[0] + v.getWidth() / 2;
+    }
+
+    private int listWidth() {
+        View decor = getWindow() != null ? getWindow().getDecorView() : null;
+        return decor != null ? decor.getWidth() : 0;
     }
 
     // ------------------------------------------------------------- tile actions
@@ -262,8 +267,8 @@ public class HomeActivity extends Activity implements RowAdapter.RowFocusListene
 
     private void updateClock() {
         Date now = new Date();
-        clockView.setText(DateFormat.getDateFormat(this).format(now));
-        dateView.setText(java.text.DateFormat.getDateInstance(java.text.DateFormat.LONG_FORMAT)
+        clockView.setText(DateFormat.getTimeFormat(this).format(now));
+        dateView.setText(java.text.DateFormat.getDateInstance(java.text.DateFormat.DEFAULT)
                 .format(now));
     }
 

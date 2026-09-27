@@ -54,6 +54,7 @@ id row_list
 id row_title
 id rows_container
 id settings_button
+id tag_action
 id tile_icon
 id tile_label
 id tile_root
@@ -62,6 +63,7 @@ layout activity_home
 layout item_app_tile
 layout view_home_row
 mipmap ic_launcher
+mipmap ic_launcher_round
 string action_device_info
 string action_home_settings
 string action_open_info
@@ -82,9 +84,13 @@ string open
 string row_all_apps
 string row_recent
 string row_suggestions
+string set_about
 string set_accent_title
 string set_animations
 string set_dark_mode
+string set_dark_off
+string set_dark_on
+string set_home_title
 string set_row_recent
 string set_theme_title
 string set_wallpaper
