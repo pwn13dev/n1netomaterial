@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/background_dark" />
+    <item android:top="40%" android:bottom="58%" android:left="-40dp" android:right="-40dp">
+        <shape android:shape="line">
+            <stroke android:width="2dp" android:color="#1F9A82FF" />
+        </shape>
+    </item>
+    <item android:top="62%" android:bottom="36%" android:left="-40dp" android:right="-40dp">
+        <shape android:shape="line">
+            <stroke android:width="2dp" android:color="#14FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

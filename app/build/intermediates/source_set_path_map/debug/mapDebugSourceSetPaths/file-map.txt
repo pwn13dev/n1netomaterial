@@ -1,0 +1,6 @@
+com.n1neto.material.app-resValues-0 /workspace/app/build/generated/res/resValues/debug
+com.n1neto.material.app-packageDebugResources-1 /workspace/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.n1neto.material.app-packageDebugResources-2 /workspace/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.n1neto.material.app-debug-3 /workspace/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.n1neto.material.app-debug-4 /workspace/app/src/debug/res
+com.n1neto.material.app-main-5 /workspace/app/src/main/res

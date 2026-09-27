@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Material app tile: circular icon frame + label, scales on focus -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tile_root"
+    android:layout_width="@dimen/tile_width"
+    android:layout_height="@dimen/tile_height"
+    android:layout_marginEnd="@dimen/tile_spacing"
+    android:background="@drawable/tile_bg"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/tile_icon"
+        android:layout_width="@dimen/tile_icon"
+        android:layout_height="@dimen/tile_icon"
+        android:background="@drawable/tile_icon_bg"
+        android:contentDescription="@null"
+        android:padding="7dp"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/tile_label"
+        style="@style/Text.N1.AppLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/tile_label_color" />
+</LinearLayout>

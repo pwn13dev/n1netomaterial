@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.n1neto.material'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.n1neto.material"
+        minSdk 17          // works on older Android TV / ATV devices (API 17+)
+        targetSdk 28       // avoid scoped-storage & runtime-permission complexity on legacy boxes
+        versionCode 1
+        versionName "1.0.0"
+        vectorDrawables.useSupportLibrary true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    // Intentionally ZERO external dependencies: the launcher is built on plain
+    // framework widgets (Activity + ListView rows) so it stays tiny (~100 KB APK)
+    // and runs smoothly even on API 17 ATV boxes with 512 MB RAM.
+    // Material You design is implemented in code (TonalPalette / N1Theme).
+}

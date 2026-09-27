@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base neutral palette (light) -->
+    <color name="surface_light">#FFFBFE</color>
+    <color name="background_light">#FFF8F5FD</color>
+    <color name="on_surface_light">#1C1B1F</color>
+    <color name="on_surface_variant_light">#49454F</color>
+
+    <!-- Dark TV palette -->
+    <color name="surface_dark">#121316</color>
+    <color name="surface_container_dark">#1E1F24</color>
+    <color name="surface_high_dark">#272830</color>
+    <color name="background_dark">#0D0E11</color>
+    <color name="on_surface_dark">#E6E1E5</color>
+    <color name="on_surface_dim_dark">#9E9EA7</color>
+    <color name="outline_dark">#49474E</color>
+
+    <!-- Default accent (used before Material You extraction / classic theme) -->
+    <color name="seed_purple">#7F62FF</color>
+    <color name="accent_primary">#9A82FF</color>
+    <color name="accent_on_primary">#19025B</color>
+    <color name="accent_container">#3B2E66</color>
+    <color name="scrim">#99000000</color>
+    <color name="ripple_dark">#33FFFFFF</color>
+
+    <!-- Selectable accent seeds in settings -->
+    <color name="seed_violet">#7F62FF</color>
+    <color name="seed_blue">#3D7AFF</color>
+    <color name="seed_teal">#00BFA5</color>
+    <color name="seed_green">#4CAF50</color>
+    <color name="seed_amber">#FFB300</color>
+    <color name="seed_coral">#FF6E5A</color>
+    <color name="seed_pink">#E860A8</color>
+</resources>
